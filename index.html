@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="imagenes/form.png">
+    <title>TP1</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+        </style>
+</head>
+<body>
+  <button id="themeToggle" class="theme-toggle-btn">Cambiar Tema</button>
+    <form autocomplete="off">
+        <h2>Complete los siguientes campos con sus datos:</h2>
+        <p>Nombre:</p>
+        <input type="text" id="nombre">
+        <div>
+            <p id="pNombre"class="rojo"></p>
+        </div>
+        <p>
+            Email:
+        </p>
+        <input type="email" id="email">
+        <div>
+            <p id="pMail"class="rojo"></p>
+        </div>
+            <p>Contraseña:</p>
+            <input type="password" id="contraseña">
+        <div>
+            <p id="pContra" class="rojo"></p>
+        </div>
+
+            <p>Confirmar Contraseña:</p>
+            <input type="password" id="contraseña2">
+        <div>
+            <p id="pConfirmarContra" class="rojo"></p>
+        </div>
+
+        <button>Registrarse</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
