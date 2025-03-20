@@ -1,4 +1,4 @@
-let contraseña2 = document.getElementById("contraseña2").value;
+const checkbox = document.querySelector('.bb8-toggle__checkbox');
 let nombreValidado = false;
 let emailValidado = false;
 let contraValidada = false;
@@ -8,22 +8,31 @@ document.getElementById("nombre").addEventListener("input", () => {
     let nombre = document.getElementById("nombre");
     let pNombre = document.getElementById("pNombre"); 
     const cantCharMinNombre = 3;
-
-    if (nombre.value.length < cantCharMinNombre) {
-        pNombre.innerHTML = "✖ El nombre debe tener al menos 3 caracteres."
-        nombre.style.border="3px solid red"
-        pNombre.className="rojo";
-    } else {
+    if(nombre.value===""){
+        pNombre.innerHTML="";
+        nombre.style.border="3px solid gray"
+    }else{
+    if (nombre.value.length >= cantCharMinNombre) {
+       
         pNombre.innerHTML = "";
         nombre.style.border="3px solid green"
         nombreValidado=true;
+    } else {
+        pNombre.innerHTML = "✖ El nombre debe tener al menos 3 caracteres."
+        nombre.style.border="3px solid red"
+        pNombre.className="rojo";
     }
+}
 });
 
 
 document.getElementById("email").addEventListener("input", () => {
     let email = document.getElementById("email");
     let pMail = document.getElementById("pMail"); 
+    if(email.value===""){
+        pMail.innerHTML="";
+    email.style.border="3px solid gray"
+    }else{
     if (validarEmail(email.value)){
     pMail.innerHTML="";
     email.style.border="3px solid green"
@@ -32,6 +41,7 @@ document.getElementById("email").addEventListener("input", () => {
     email.style.border="3px solid red";
     emailValidado=true;  
     }
+}
 });
 
 function validarEmail(email) {
@@ -42,26 +52,30 @@ function validarEmail(email) {
 
 document.getElementById("contraseña").addEventListener("input", () => {
     const cantCharMinContra = 8;
-    let contra = document.getElementById("contraseña").value; 
+    let contra = document.getElementById("contraseña"); 
     let pContra = document.getElementById("pContra");
-
-    if (contra.length < cantCharMinContra) {
+    if(contra.value===""){
+        pContra.innerHTML =""
+        contra.style.border = "3px solid gray";
+    }else{
+    if (contra.value.length < cantCharMinContra) {
         pContra.innerHTML = "✖ La contraseña debe tener al menos 8 caracteres.";
         pContra.className = "rojo";
-        document.getElementById("contraseña").style.border = "3px solid red";
-    } else if (!contieneLetra(contra)) {
+        contra.style.border = "3px solid red";
+    } else if (!contieneLetra(contra.value)) {
         pContra.innerHTML = "✖ La contraseña debe tener al menos 1 letra.";
         pContra.className = "rojo";
-        document.getElementById("contraseña").style.border = "3px solid red";
-    } else if (!contieneNumero(contra)) {
+        contra.style.border = "3px solid red";
+    } else if (!contieneNumero(contra.value)) {
         pContra.innerHTML = "✖ La contraseña debe tener al menos 1 número.";
         pContra.className = "rojo";
-        document.getElementById("contraseña").style.border = "3px solid red";
+        contra.style.border = "3px solid red";
     } else {
         pContra.innerHTML = "";
-        document.getElementById("contraseña").style.border = "3px solid green";
+        contra.style.border = "3px solid green";
         contraValidada=true;
     }
+}
 });
 
 function contieneLetra(contrasena) {
@@ -108,22 +122,50 @@ document.querySelector("form").addEventListener("submit", (event) => {
     }
 });
 
+const fondo =document.getElementById("fondo");
+const form=document.getElementById("form");
+const titulo=document.getElementById("titulo");
+const labelnombre=document.getElementById("labelnombre");
+const labelmail=document.getElementById("labelmail");
+const labelcontra=document.getElementById("labelcontra");
+const labelconficontra=document.getElementById("labelconficontra");
+const boton=document. getElementById("boton");
 
-
-
-
-
-
-
-
-// Obtener el botón y el body
-const themeToggleButton = document.getElementById('themeToggle');
-const body = document.body;
-
-// Función para alternar entre temas
-themeToggleButton.addEventListener('click', () => {
-    body.classList.toggle('dark-theme'); // Alterna la clase dark-theme en el body
-    const form = document.querySelector('form');
-    form.classList.toggle('dark-theme'); // Alterna la clase dark-theme en el formulario
-    themeToggleButton.classList.toggle('dark-theme'); // Alterna el estilo del botón para el tema oscuro
+checkbox.addEventListener('change', () => {
+   if(checkbox.checked){
+    fondo.style.background="#181818";
+    form.style.background="#1f1f1f";
+    form.style.border="3px solid #e0e0e0";
+    titulo.style.color="#eaeaea";
+    labelnombre.style.color="#e0e0e0";
+    labelmail.style.color="#e0e0e0";
+    labelcontra.style.color=" #e0e0e0";
+    labelconficontra.style.color="#e0e0e0";
+    boton.style.background="rgb(231, 231, 231)";
+    boton.style.color="black";
+    boton.addEventListener('mouseover', ()=> {
+        boton.style.background="rgb(197, 196, 196)";
+    })
+    boton.addEventListener('mouseout', () => {
+        boton.style.background = "rgb(231, 231, 231)"; 
+    });
+   }else {
+    fondo.style.background="linear-gradient(#74b9ff, #0984e3)";
+    form.style.background="white";
+    form.style.border="3px solid black";
+    titulo.style.color="black";
+    labelnombre.style.color="black";
+    labelmail.style.color="black";
+    labelcontra.style.color="black";
+    labelconficontra.style.color="black";
+    boton.style.background="#0984e3";
+    boton.style.color="white";
+    boton.addEventListener('mouseover', ()=> {
+        boton.style.background=" #809ab4";
+    })
+    boton.addEventListener('mouseout', () => {
+        boton.style.background=" #0984e3";
+        ; 
+    });
+   }
 });

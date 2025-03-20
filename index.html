@@ -10,35 +10,68 @@
         @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
         </style>
 </head>
-<body>
-  <button id="themeToggle" class="theme-toggle-btn">Cambiar Tema</button>
-    <form autocomplete="off">
-        <h2>Complete los siguientes campos con sus datos:</h2>
-        <p>Nombre:</p>
+<body id="fondo">
+<!-- From Uiverse.io by Galahhad --> 
+<label class="bb8-toggle">
+    <input class="bb8-toggle__checkbox" type="checkbox">
+    <div class="bb8-toggle__container">
+      <div class="bb8-toggle__scenery">
+        <div class="bb8-toggle__star"></div>
+        <div class="bb8-toggle__star"></div>
+        <div class="bb8-toggle__star"></div>
+        <div class="bb8-toggle__star"></div>
+        <div class="bb8-toggle__star"></div>
+        <div class="bb8-toggle__star"></div>
+        <div class="bb8-toggle__star"></div>
+        <div class="tatto-1"></div>
+        <div class="tatto-2"></div>
+        <div class="gomrassen"></div>
+        <div class="hermes"></div>
+        <div class="chenini"></div>
+        <div class="bb8-toggle__cloud"></div>
+        <div class="bb8-toggle__cloud"></div>
+        <div class="bb8-toggle__cloud"></div>
+      </div>
+      <div class="bb8">
+        <div class="bb8__head-container">
+          <div class="bb8__antenna"></div>
+          <div class="bb8__antenna"></div>
+          <div class="bb8__head"></div>
+        </div>
+        <div class="bb8__body"></div>
+      </div>
+      <div class="artificial__hidden">
+        <div class="bb8__shadow"></div>
+      </div>
+    </div>
+  </label>
+        <form autocomplete="off" id="form">
+        <h2 id="titulo">Complete los siguientes campos con sus datos:</h2>
+        <p id="labelnombre">Nombre:</p>
         <input type="text" id="nombre">
         <div>
             <p id="pNombre"class="rojo"></p>
         </div>
-        <p>
+        <p id="labelmail">
             Email:
         </p>
         <input type="email" id="email">
         <div>
             <p id="pMail"class="rojo"></p>
         </div>
-            <p>Contraseña:</p>
+            <p id="labelcontra">Contraseña:</p>
             <input type="password" id="contraseña">
         <div>
             <p id="pContra" class="rojo"></p>
         </div>
 
-            <p>Confirmar Contraseña:</p>
+            <p id="labelconficontra">Confirmar Contraseña:</p>
             <input type="password" id="contraseña2">
         <div>
             <p id="pConfirmarContra" class="rojo"></p>
         </div>
 
-        <button>Registrarse</button>
+        <button id="boton">Registrarse</button>
     </form>
     <script src="script.js"></script>
 </body>
