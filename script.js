@@ -1,4 +1,5 @@
 const checkbox = document.querySelector('.bb8-toggle__checkbox');
+const checkboxContra =document.getElementById("checkOjo");
 let nombreValidado = false;
 let emailValidado = false;
 let contraValidada = false;
@@ -168,3 +169,12 @@ checkbox.addEventListener('change', () => {
     });
    }
 });
+
+
+checkboxContra.addEventListener('change', ()=>{
+    if(checkboxContra.checked){
+        document.getElementById("contraseña").type = "text"
+    }else{
+        document.getElementById("contraseña").type = "password"
+    }
+})
