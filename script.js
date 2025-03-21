@@ -88,14 +88,13 @@ function contieneNumero(contrasena) {
 
 function validarContraConfi() {
     let contra = document.getElementById("contraseña").value;
-    let confirmarContra = document.getElementById("contraseña2").value;
     let pConfirmar = document.getElementById("pConfirmarContra");
     let inputConfirmar = document.getElementById("contraseña2");
 
-    if (confirmarContra === "") {
+    if (inputConfirmar.value === "") {
         pConfirmar.innerHTML = "";
         inputConfirmar.style.border = "3px solid gray";
-    } else if (confirmarContra !== contra) {
+    } else if (inputConfirmar.value !== contra) {
         pConfirmar.innerHTML = "✖ Las contraseñas no coinciden.";
         inputConfirmar.style.border = "3px solid red";
     } else {
@@ -161,7 +160,7 @@ checkbox.addEventListener('change', () => {
     boton.style.background="#0984e3";
     boton.style.color="white";
     boton.addEventListener('mouseover', ()=> {
-        boton.style.background=" #809ab4";
+        boton.style.background="#66a2df";
     })
     boton.addEventListener('mouseout', () => {
         boton.style.background=" #0984e3";
